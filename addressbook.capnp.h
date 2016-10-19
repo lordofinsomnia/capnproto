@@ -29,6 +29,7 @@ CAPNP_DECLARE_SCHEMA(9c3a99a2f938fc95);
 }  // namespace schemas
 }  // namespace capnp
 
+namespace addressbook {
 
 struct Person {
   Person() = delete;
@@ -128,7 +129,7 @@ public:
   inline  ::capnp::Text::Reader getEmail() const;
 
   inline bool hasPhones() const;
-  inline  ::capnp::List< ::Person::PhoneNumber>::Reader getPhones() const;
+  inline  ::capnp::List< ::addressbook::Person::PhoneNumber>::Reader getPhones() const;
 
   inline Employment::Reader getEmployment() const;
 
@@ -178,11 +179,11 @@ public:
   inline ::capnp::Orphan< ::capnp::Text> disownEmail();
 
   inline bool hasPhones();
-  inline  ::capnp::List< ::Person::PhoneNumber>::Builder getPhones();
-  inline void setPhones( ::capnp::List< ::Person::PhoneNumber>::Reader value);
-  inline  ::capnp::List< ::Person::PhoneNumber>::Builder initPhones(unsigned int size);
-  inline void adoptPhones(::capnp::Orphan< ::capnp::List< ::Person::PhoneNumber>>&& value);
-  inline ::capnp::Orphan< ::capnp::List< ::Person::PhoneNumber>> disownPhones();
+  inline  ::capnp::List< ::addressbook::Person::PhoneNumber>::Builder getPhones();
+  inline void setPhones( ::capnp::List< ::addressbook::Person::PhoneNumber>::Reader value);
+  inline  ::capnp::List< ::addressbook::Person::PhoneNumber>::Builder initPhones(unsigned int size);
+  inline void adoptPhones(::capnp::Orphan< ::capnp::List< ::addressbook::Person::PhoneNumber>>&& value);
+  inline ::capnp::Orphan< ::capnp::List< ::addressbook::Person::PhoneNumber>> disownPhones();
 
   inline Employment::Builder getEmployment();
   inline Employment::Builder initEmployment();
@@ -234,7 +235,7 @@ public:
   inline bool hasNumber() const;
   inline  ::capnp::Text::Reader getNumber() const;
 
-  inline  ::Person::PhoneNumber::Type getType() const;
+  inline  ::addressbook::Person::PhoneNumber::Type getType() const;
 
 private:
   ::capnp::_::StructReader _reader;
@@ -271,8 +272,8 @@ public:
   inline void adoptNumber(::capnp::Orphan< ::capnp::Text>&& value);
   inline ::capnp::Orphan< ::capnp::Text> disownNumber();
 
-  inline  ::Person::PhoneNumber::Type getType();
-  inline void setType( ::Person::PhoneNumber::Type value);
+  inline  ::addressbook::Person::PhoneNumber::Type getType();
+  inline void setType( ::addressbook::Person::PhoneNumber::Type value);
 
 private:
   ::capnp::_::StructBuilder _builder;
@@ -429,7 +430,7 @@ public:
 #endif  // !CAPNP_LITE
 
   inline bool hasPeople() const;
-  inline  ::capnp::List< ::Person>::Reader getPeople() const;
+  inline  ::capnp::List< ::addressbook::Person>::Reader getPeople() const;
 
 private:
   ::capnp::_::StructReader _reader;
@@ -460,11 +461,11 @@ public:
 #endif  // !CAPNP_LITE
 
   inline bool hasPeople();
-  inline  ::capnp::List< ::Person>::Builder getPeople();
-  inline void setPeople( ::capnp::List< ::Person>::Reader value);
-  inline  ::capnp::List< ::Person>::Builder initPeople(unsigned int size);
-  inline void adoptPeople(::capnp::Orphan< ::capnp::List< ::Person>>&& value);
-  inline ::capnp::Orphan< ::capnp::List< ::Person>> disownPeople();
+  inline  ::capnp::List< ::addressbook::Person>::Builder getPeople();
+  inline void setPeople( ::capnp::List< ::addressbook::Person>::Reader value);
+  inline  ::capnp::List< ::addressbook::Person>::Builder initPeople(unsigned int size);
+  inline void adoptPeople(::capnp::Orphan< ::capnp::List< ::addressbook::Person>>&& value);
+  inline ::capnp::Orphan< ::capnp::List< ::addressbook::Person>> disownPeople();
 
 private:
   ::capnp::_::StructBuilder _builder;
@@ -578,29 +579,29 @@ inline bool Person::Reader::hasPhones() const {
 inline bool Person::Builder::hasPhones() {
   return !_builder.getPointerField(2 * ::capnp::POINTERS).isNull();
 }
-inline  ::capnp::List< ::Person::PhoneNumber>::Reader Person::Reader::getPhones() const {
-  return ::capnp::_::PointerHelpers< ::capnp::List< ::Person::PhoneNumber>>::get(
+inline  ::capnp::List< ::addressbook::Person::PhoneNumber>::Reader Person::Reader::getPhones() const {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::addressbook::Person::PhoneNumber>>::get(
       _reader.getPointerField(2 * ::capnp::POINTERS));
 }
-inline  ::capnp::List< ::Person::PhoneNumber>::Builder Person::Builder::getPhones() {
-  return ::capnp::_::PointerHelpers< ::capnp::List< ::Person::PhoneNumber>>::get(
+inline  ::capnp::List< ::addressbook::Person::PhoneNumber>::Builder Person::Builder::getPhones() {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::addressbook::Person::PhoneNumber>>::get(
       _builder.getPointerField(2 * ::capnp::POINTERS));
 }
-inline void Person::Builder::setPhones( ::capnp::List< ::Person::PhoneNumber>::Reader value) {
-  ::capnp::_::PointerHelpers< ::capnp::List< ::Person::PhoneNumber>>::set(
+inline void Person::Builder::setPhones( ::capnp::List< ::addressbook::Person::PhoneNumber>::Reader value) {
+  ::capnp::_::PointerHelpers< ::capnp::List< ::addressbook::Person::PhoneNumber>>::set(
       _builder.getPointerField(2 * ::capnp::POINTERS), value);
 }
-inline  ::capnp::List< ::Person::PhoneNumber>::Builder Person::Builder::initPhones(unsigned int size) {
-  return ::capnp::_::PointerHelpers< ::capnp::List< ::Person::PhoneNumber>>::init(
+inline  ::capnp::List< ::addressbook::Person::PhoneNumber>::Builder Person::Builder::initPhones(unsigned int size) {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::addressbook::Person::PhoneNumber>>::init(
       _builder.getPointerField(2 * ::capnp::POINTERS), size);
 }
 inline void Person::Builder::adoptPhones(
-    ::capnp::Orphan< ::capnp::List< ::Person::PhoneNumber>>&& value) {
-  ::capnp::_::PointerHelpers< ::capnp::List< ::Person::PhoneNumber>>::adopt(
+    ::capnp::Orphan< ::capnp::List< ::addressbook::Person::PhoneNumber>>&& value) {
+  ::capnp::_::PointerHelpers< ::capnp::List< ::addressbook::Person::PhoneNumber>>::adopt(
       _builder.getPointerField(2 * ::capnp::POINTERS), kj::mv(value));
 }
-inline ::capnp::Orphan< ::capnp::List< ::Person::PhoneNumber>> Person::Builder::disownPhones() {
-  return ::capnp::_::PointerHelpers< ::capnp::List< ::Person::PhoneNumber>>::disown(
+inline ::capnp::Orphan< ::capnp::List< ::addressbook::Person::PhoneNumber>> Person::Builder::disownPhones() {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::addressbook::Person::PhoneNumber>>::disown(
       _builder.getPointerField(2 * ::capnp::POINTERS));
 }
 
@@ -652,24 +653,24 @@ inline ::capnp::Orphan< ::capnp::Text> Person::PhoneNumber::Builder::disownNumbe
       _builder.getPointerField(0 * ::capnp::POINTERS));
 }
 
-inline  ::Person::PhoneNumber::Type Person::PhoneNumber::Reader::getType() const {
-  return _reader.getDataField< ::Person::PhoneNumber::Type>(
+inline  ::addressbook::Person::PhoneNumber::Type Person::PhoneNumber::Reader::getType() const {
+  return _reader.getDataField< ::addressbook::Person::PhoneNumber::Type>(
       0 * ::capnp::ELEMENTS);
 }
 
-inline  ::Person::PhoneNumber::Type Person::PhoneNumber::Builder::getType() {
-  return _builder.getDataField< ::Person::PhoneNumber::Type>(
+inline  ::addressbook::Person::PhoneNumber::Type Person::PhoneNumber::Builder::getType() {
+  return _builder.getDataField< ::addressbook::Person::PhoneNumber::Type>(
       0 * ::capnp::ELEMENTS);
 }
-inline void Person::PhoneNumber::Builder::setType( ::Person::PhoneNumber::Type value) {
-  _builder.setDataField< ::Person::PhoneNumber::Type>(
+inline void Person::PhoneNumber::Builder::setType( ::addressbook::Person::PhoneNumber::Type value) {
+  _builder.setDataField< ::addressbook::Person::PhoneNumber::Type>(
       0 * ::capnp::ELEMENTS, value);
 }
 
-inline  ::Person::Employment::Which Person::Employment::Reader::which() const {
+inline  ::addressbook::Person::Employment::Which Person::Employment::Reader::which() const {
   return _reader.getDataField<Which>(2 * ::capnp::ELEMENTS);
 }
-inline  ::Person::Employment::Which Person::Employment::Builder::which() {
+inline  ::addressbook::Person::Employment::Which Person::Employment::Builder::which() {
   return _builder.getDataField<Which>(2 * ::capnp::ELEMENTS);
 }
 
@@ -835,31 +836,32 @@ inline bool AddressBook::Reader::hasPeople() const {
 inline bool AddressBook::Builder::hasPeople() {
   return !_builder.getPointerField(0 * ::capnp::POINTERS).isNull();
 }
-inline  ::capnp::List< ::Person>::Reader AddressBook::Reader::getPeople() const {
-  return ::capnp::_::PointerHelpers< ::capnp::List< ::Person>>::get(
+inline  ::capnp::List< ::addressbook::Person>::Reader AddressBook::Reader::getPeople() const {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::addressbook::Person>>::get(
       _reader.getPointerField(0 * ::capnp::POINTERS));
 }
-inline  ::capnp::List< ::Person>::Builder AddressBook::Builder::getPeople() {
-  return ::capnp::_::PointerHelpers< ::capnp::List< ::Person>>::get(
+inline  ::capnp::List< ::addressbook::Person>::Builder AddressBook::Builder::getPeople() {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::addressbook::Person>>::get(
       _builder.getPointerField(0 * ::capnp::POINTERS));
 }
-inline void AddressBook::Builder::setPeople( ::capnp::List< ::Person>::Reader value) {
-  ::capnp::_::PointerHelpers< ::capnp::List< ::Person>>::set(
+inline void AddressBook::Builder::setPeople( ::capnp::List< ::addressbook::Person>::Reader value) {
+  ::capnp::_::PointerHelpers< ::capnp::List< ::addressbook::Person>>::set(
       _builder.getPointerField(0 * ::capnp::POINTERS), value);
 }
-inline  ::capnp::List< ::Person>::Builder AddressBook::Builder::initPeople(unsigned int size) {
-  return ::capnp::_::PointerHelpers< ::capnp::List< ::Person>>::init(
+inline  ::capnp::List< ::addressbook::Person>::Builder AddressBook::Builder::initPeople(unsigned int size) {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::addressbook::Person>>::init(
       _builder.getPointerField(0 * ::capnp::POINTERS), size);
 }
 inline void AddressBook::Builder::adoptPeople(
-    ::capnp::Orphan< ::capnp::List< ::Person>>&& value) {
-  ::capnp::_::PointerHelpers< ::capnp::List< ::Person>>::adopt(
+    ::capnp::Orphan< ::capnp::List< ::addressbook::Person>>&& value) {
+  ::capnp::_::PointerHelpers< ::capnp::List< ::addressbook::Person>>::adopt(
       _builder.getPointerField(0 * ::capnp::POINTERS), kj::mv(value));
 }
-inline ::capnp::Orphan< ::capnp::List< ::Person>> AddressBook::Builder::disownPeople() {
-  return ::capnp::_::PointerHelpers< ::capnp::List< ::Person>>::disown(
+inline ::capnp::Orphan< ::capnp::List< ::addressbook::Person>> AddressBook::Builder::disownPeople() {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::addressbook::Person>>::disown(
       _builder.getPointerField(0 * ::capnp::POINTERS));
 }
 
+}  // namespace
 
 #endif  // CAPNP_INCLUDED_888a6ea07e98fd68_

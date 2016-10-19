@@ -375,6 +375,7 @@ const ::capnp::_::RawSchema s_9c3a99a2f938fc95 = {
 
 // =======================================================================================
 
+namespace addressbook {
 
 // Person
 #ifndef _MSC_VER
@@ -421,4 +422,5 @@ constexpr ::capnp::_::RawBrandedSchema const* AddressBook::_capnpPrivate::brand;
 #endif  // !CAPNP_LITE
 
 
+}  // namespace
 
